@@ -1,11 +1,7 @@
-resource "aws_instance" "web" {
-  ami           = "ami-0915bcb5fa77e4892"
-  instance_type = "t2.nano"
+#Creating new ec2 instance
+resource "aws_instance" "ec2_test" {
+  ami           = var.ami
+  instance_type = var.instance_type
 
-  tags = {
-    Name = "mariana-test"
-  }
+  tags = local.common_tags
 }
-
-
-
